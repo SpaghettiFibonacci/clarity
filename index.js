@@ -34,9 +34,13 @@ async function ask(input) {
 }
 
 let input = 'Latest news on coronavirus';
-console.log(`Your answer on input:\r\n${await ask(input)}`);
+let response = await ask(input);
+console.log(`Your answer on input:\r\n${response}`);
 history.push({content: input, role: 'user'});
+history.push({content: response, role: 'assistant'});
 
 let input2 = 'How many deaths?'; // it knows context from history
-console.log(`Your answer on input2:\r\n${await ask(input2)}`);
+let response2 = await ask(input2);
+console.log(`Your answer on input2:\r\n${response2}`);
 history.push({content: input2, role: 'user'});
+history.push({content: response2, role: 'assistant'});
