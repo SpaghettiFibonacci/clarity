@@ -1,5 +1,6 @@
 # Clarity
 perplexity.ai clone
+
 The opposite of "perplexity" in English is "clarity" or "understanding."
 
 ## Perplexity.ai
