@@ -19,21 +19,19 @@ async function ask(input) {
     let content = '';
 
     for (let i = 0; i < 3; i++) {
-        const url = urls[i];
+        const url = urls[i]; // your source incorporate if you want to cite it
         let webContent = await getContentFromHeadlessBrowser(`https://${url}`);
         // step 4 Make a summary of the content
-        content += await chat([{content: `The question is: ${input}\r\nMake a very detailed summary and include important items that cannot be summarized LEAVE OUT ANY UNRELATED THINGS IF NOTHING JUST EMPTY SPACE:\r\n${webContent.substring(0, 2048)}`, role: 'user'}]) + ";\r\n";
+        content += await chat([{content: `Answer this question: ${input}\r\nWith a very detailed summary:\r\n${webContent.substring(0, 2048)}`, role: 'user'}].concat(history)) + ";\r\n";
     }
 
-    // step 5 Make a summary of all the summaries
-    let summarize = await chat([{content: `The history of the conversation for context: {${history.map(e => e.content + ';')} \r\nThe The original question: ${input}\r\Use the following information for the original question: ${content}`, role: 'user'}, {content: `Only give back the summary for all my questions`, role: 'user'}]);
+    // step 5 Make a summary of all the summaries for the response
+    let response = await chat([{content: `Answer this question: ${input}\r\nUse the following information for the original question: ${content}`, role: 'user'}].concat(history));
 
-    // step 6 Use the summary of summaries to answer the question possibly a bit redundant
-    let response = await chat([{content:`Tell me something about this: ${input}\r\n Use this summary to tell me something about it: ${summarize}`, role: 'user'}].concat(history));
     return response;
 }
 
-let input = 'Latest news on coronavirus';
+let input = 'What is the latest news on coronavirus?';
 let response = await ask(input);
 console.log(`Your answer on input:\r\n${response}`);
 history.push({content: input, role: 'user'});
