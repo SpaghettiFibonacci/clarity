@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "clarity",
+  "version": "1.0.0",
+  "description": "The opposite of \"perplexity\" in English is \"clarity\" or \"understanding.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaghettiFibonacci/clarity.git"
+  },
+  "author": "SpaghettiFibonacci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpaghettiFibonacci/clarity/issues"
+  },
+  "homepage": "https://github.com/SpaghettiFibonacci/clarity#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "puppeteer": "^19.7.4"
+  }
+}
