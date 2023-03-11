@@ -5,7 +5,7 @@ let history = []; // very important
 
 async function ask(input) {
     // step 1 Create search query from the input of the user
-    let searchTerm = await chat([{content: `The history of the conversation for context: {${history.map(e => e.content + ';')} \r\n You are a search query maker. Give back a search query for this: ${input} }`, role: 'user'}, {content: `Only give back a short search query for all my questions`, role: 'user'}]);
+    let searchTerm = await chat([{content: `You are a search query maker. Give back a search query for this: ${input} }`, role: 'user'}, {content: `Only give back a short search query for all my questions`, role: 'user'}].concat(history));
     searchTerm = searchTerm.replaceAll('"', '');
 
     // step 2 Extract urls from the search query
