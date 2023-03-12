@@ -1,4 +1,5 @@
 # Clarity
+
 perplexity.ai clone recipe
 
 The opposite of "perplexity" in English is "clarity" or "understanding."
@@ -11,4 +12,4 @@ This repo shows how you can get similar results to perplexity.ai using the follo
 2. Extract urls from the search query
 3. Extract the content from x amount of urls
 4. Make a summary of the content
-5. Make a summary of all the summaries for the response
+5. _OPTIONAL_ Make a summary of all the summaries for the response
