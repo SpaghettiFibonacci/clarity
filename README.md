@@ -12,7 +12,7 @@ If you're looking for a way to improve your understanding and gain clarity on an
 
 With perplexity.ai, users can input search queries and receive summaries of top search results including sources. However, with this recipe, you are shown how to achieve similar results in just five simple steps!
 
-## Perplexity.ai
+## The steps for reproduction
 
 This repo shows how you can get similar results to perplexity.ai using the following steps:
 
